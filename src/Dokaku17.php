@@ -8,7 +8,14 @@ class Dokaku17
 {
     public function run(string $input) : string
     {
-        // implement me
-        return '1444';
+        $dec = intval($input);
+
+        while (true) {
+            $bin = decbin(strval(++$dec));
+
+            if (strpos($bin, '000') === false && strpos($bin, '111') === false) {
+                return strval($dec);
+            }
+        }
     }
 }
